@@ -176,7 +176,7 @@ createApp({
 
     },
     created() {
-        createContact
+        
     }
 
 }).mount('#app')
