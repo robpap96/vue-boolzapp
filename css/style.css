@@ -65,11 +65,11 @@ _____________________*/
 .profile-pic {
     width: 50px;
     height: 50px;
-
+    
 }
 .profile-pic img{
     display: block;
-    width: 100%;
+    max-width: 100%;
     border-radius: 50%;
 }
 .profile-name {
@@ -154,6 +154,42 @@ button[type="submit"]:focus, input[type="search"]:focus {
 
 button[type="submit"]:hover {
     opacity: 1;
+}
+/*____________________
+
+      CONTACTS-CHAT
+_____________________*/
+.contacts-chat {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.contacts-chat .profile-pic {
+    width: 60px;
+    height: 60px;
+    
+}
+.contacts-chat .contact-card {
+    display: flex;
+    padding: 10px 0;
+}
+.contacts-chat .profile-name {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    margin-left: 20px;
+}
+.contacts-chat .profile-name span {
+    color: #c1b9c0;
+    font-size: 13px;
+    font-weight: 100;
+}
+.contact-card .last-message-date {
+    margin-left: auto;
+    color: #c1b9c0;
+    font-size: 13px;
+    font-weight: 100;
 }
 /*____________________
 

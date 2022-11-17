@@ -29,7 +29,9 @@
                         <div class="profile-pic">
                             <img src="img/avatar_io.jpg" alt="profile-pic">
                         </div>
-                        <div class="profile-name">Sofia</div>
+                        <div class="profile-name">
+                            Sofia
+                        </div>
                     </div>
                     <div class="left-chat-actions">
                         <div class="circle-notch-btn"><i class="fa-solid fa-circle-notch"></i></div>
@@ -55,11 +57,17 @@
                 </div>
                 <!-- ///CHAT-SEARCH -->
                 <!-- YOUR-CONTACTS -->
-                <div class="your-contacts">
-                    <div class="contact-card">
-                        <div class="profile-pic" v-for="contact in contacts">
-                            <!-- <img src="avatar{{contact.avatar}}.jpg"> -->
-                            a
+                <div class="contacts-chat">
+                    <div class="contact-card" v-for="contact in contacts">
+                        <div class="profile-pic" >
+                            <img :src="contact.avatar" alt="">
+                        </div>
+                        <div class="profile-name">
+                            {{contact.name}}
+                           <span>{{contact.messages[0].message}}</span> 
+                        </div>
+                        <div class="last-message-date">
+                            {{contact.messages[0].date}}
                         </div>
                     </div>
                 </div>
