@@ -24,7 +24,7 @@ createApp({
                             status: 'sent'
                         },
                         {
-                            date: '10/01/2020 16:15:22',
+                            date: '10/01/2020 16:15',
                             message: 'Tutto fatto!',
                             status: 'received'
                         }
@@ -153,7 +153,7 @@ createApp({
                     visible: false,
                     messages: [
                         {
-                            date: '10/01/2020 15:30:55',
+                            date: '10/01/2020 15:30:00',
                             message: 'Ciao, andiamo a mangiare la pizza stasera?',
                             status: 'received'
                         },
@@ -180,20 +180,26 @@ createApp({
         addMessage(contacts){
             let today = new Date();
             let time = today.getHours() + ":" + today.getMinutes();
-            const currentMessageInfo = {
+            const currentMessageMy = {
                 date: time,
                 message: this.currentMessage,
                 status: 'sent'
             };
-            contacts.messages.push(currentMessageInfo);
-            this.currentMessage = '';
-          
+            contacts.messages.push(currentMessageMy);
+            this.currentMessage = ''
+            setTimeout(function(){
+                const currentMessageHim = {
+                    date: time,
+                    message: 'ok',
+                    status: 'recived'
+                };
+            contacts.messages.push(currentMessageHim);
+
+            }, 1000);
         },
 
 
     },
-    created() {
-        
-    }
+
 
 }).mount('#app')

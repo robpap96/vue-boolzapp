@@ -98,7 +98,7 @@
                         <div class="message-container" v-for="(contact,index) in contacts[activeContact].messages" >
                             <div class="message" :class="contact.status">    
                                 {{contact.message}}
-                                <div class="message-data">12:00</div>
+                                <div class="message-data">{{contact.date}}</div>
                             </div>
                             <!-- <div v-if="index >= 2 && contact.visible" :class="{message, sent : addMessage}"  >
                                 {{currentMessage}}

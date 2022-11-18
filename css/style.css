@@ -270,11 +270,15 @@ _____________________*/
 .message.sent {
     background-color: #d5f9ba;
     margin-left: auto;
-}    
+}
+.message.recived {
+    background-color: #fafafa;
+    margin-right: auto;
+}  
 .message-data {
     position: absolute;
     bottom: 0;
-    right: 10px;
+    right: 20px;
     font-size: 11px; 
     color: #c1b9c0;
 }
