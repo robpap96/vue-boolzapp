@@ -57,17 +57,19 @@
                 </div>
                 <!-- ///CHAT-SEARCH -->
                 <!-- YOUR-CONTACTS -->
-                <div class="contacts-chat">
-                    <div class="contact-card" :class="{active : index === activeContact}" v-for="(contact,index) in contacts">
-                        <div class="profile-pic" >
-                            <img :src="`img/avatar${contact.avatar}.jpg`" alt="">
-                        </div>
-                        <div class="profile-name">
-                            {{contact.name}}
-                           <span>{{contact.messages[contact.messages.length-1].message}}</span> 
-                        </div>
-                        <div class="last-message-date">
-                            {{contact.messages[contact.messages.length-1].date}}
+                <div class="contacts-container">
+                    <div class="contacts-chat">
+                        <div class="contact-card" :class="{active : index === activeContact}" v-for="(contact,index) in contacts" @click="changeActive(index)">
+                            <div class="profile-pic" >
+                                <img :src="`img/avatar${contact.avatar}.jpg`" alt="">
+                            </div>
+                            <div class="profile-name">
+                                {{contact.name}}
+                            <span class="margin-top">{{contact.messages[contact.messages.length-1].message}}</span> 
+                            </div>
+                            <div class="last-message-date">
+                                {{contact.messages[contact.messages.length-1].date}}
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -106,7 +108,7 @@
                         </div>
                     </div>
                     <div class="text-area">
-                        <input class="input-msg" name="input" placeholder=" Scrivi un messaggio" autocomplete="off" autofocus></input>
+                        <input class="input-msg" name="input" placeholder="Scrivi un messaggio" autocomplete="off" autofocus></input>
                     </div>
                     <div class="col-small">
                         <div class="right-chat-footer-btn">

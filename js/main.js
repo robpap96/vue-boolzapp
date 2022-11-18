@@ -174,7 +174,9 @@ createApp({
 
     },
     methods: {
-
+        changeActive(i){
+            this.activeContact = i;
+        }
 
     },
     created() {
