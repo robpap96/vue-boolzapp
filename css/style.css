@@ -242,13 +242,16 @@ _____________________*/
     justify-content: center;
     align-items: center;
 }
+.chat-container {
+    overflow-y: auto ;
+    width: 100%;
+}
 .messages{
     padding: 20px 80px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    width: 100%; 
-    overflow-y: scroll ;
+    width: 100%;
 }
 
 .message-container {
@@ -260,7 +263,6 @@ _____________________*/
     position: relative;
     width: 40%;
     background-color: white;
-
     padding: 10px 20px;
     margin-bottom: 10px;
     border-radius: 15px;

@@ -59,7 +59,7 @@
                 <!-- YOUR-CONTACTS -->
                 <div class="contacts-container">
                     <div class="contacts-chat">
-                        <div class="contact-card" :class="{active : index === activeContact}" v-for="(contact,index) in contacts" @click="changeActive(index)">
+                        <div class="contact-card" :class="{active : index === activeContact}" v-for="(contact,index) in contacts">
                             <div class="profile-pic" >
                                 <img :src="`img/avatar${contact.avatar}.jpg`" alt="">
                             </div>
@@ -93,11 +93,16 @@
                         <div class="vertical-eclipsis"><i class="fa-solid fa-ellipsis-vertical"></i></i></div>
                     </div>
                 </div>
-                <div class="messages" v-if="">
-                    <div class="message-container" v-for="message in contacts[activeContact].messages" >
-                        <div class="message" :class="message.status">    
-                            {{message.message}}
-                            <div class="message-data">12:00</div>
+                <div class="chat-container">
+                    <div class="messages">
+                        <div class="message-container" v-for="(contact,index) in contacts[activeContact].messages" >
+                            <div class="message" :class="contact.status">    
+                                {{contact.message}}
+                                <div class="message-data">12:00</div>
+                            </div>
+                            <!-- <div v-if="index >= 2 && contact.visible" :class="{message, sent : addMessage}"  >
+                                {{currentMessage}}
+                            </div> -->
                         </div>
                     </div>
                 </div>
@@ -108,7 +113,7 @@
                         </div>
                     </div>
                     <div class="text-area">
-                        <input class="input-msg" name="input" placeholder="Scrivi un messaggio" autocomplete="off" autofocus></input>
+                        <input v-model="currentMessage"  @keyup.enter="addMessage(contacts[activeContact])" class="input-msg" name="input" placeholder="Scrivi un messaggio" autocomplete="off" autofocus required></input>
                     </div>
                     <div class="col-small">
                         <div class="right-chat-footer-btn">
