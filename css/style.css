@@ -212,7 +212,7 @@ _____________________*/
     display: flex;
     justify-content: space-between;
     flex-shrink: 0;
-    background-color:  #fafafa;
+    background-color: #fafafa;
 }
 .right-chat .your-profile {
     display: flex;
@@ -244,8 +244,10 @@ _____________________*/
 
 }
 .message{
+    position: relative;
     width: 40%;
     background-color: white;
+
     padding: 10px 20px;
     margin-bottom: 10px;
     border-radius: 15px;
@@ -254,3 +256,48 @@ _____________________*/
     background-color: #d5f9ba;
     margin-left: auto;
 }    
+.message-data {
+    position: absolute;
+    bottom: 0;
+    right: 10px;
+    font-size: 11px; 
+    color: #c1b9c0;
+}
+.right-chat-footer {
+    display: flex;
+    justify-content: space-between;
+    flex-shrink: 0;
+    width: 100%;
+    height: 70px;
+    background-color: #f3eeea;
+    margin-top: auto;
+}
+.right-chat-footer i{
+    text-align: center;
+    margin-left: 10px;
+}
+
+.col-small{
+    width: 10%;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.text-area {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.input-msg {
+    border: 0;
+    border-radius: 6px;
+    width: 100%;
+    height: 70%;
+    flex: 1 1 auto;
+    font-size: 16px;
+    margin: 0;
+    outline: none;
+    min-width: 50px;
+  }

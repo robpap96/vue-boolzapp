@@ -95,10 +95,24 @@
                     <div class="message-container" v-for="message in contacts[activeContact].messages" >
                         <div class="message" :class="message.status">    
                             {{message.message}}
+                            <div class="message-data">12:00</div>
                         </div>
-
                     </div>
-
+                </div>
+                <div class="right-chat-footer">
+                    <div class="col-small">
+                        <div class="right-chat-footer-btn">
+                            <i class="fa-solid fa-face-smile"></i>
+                        </div>
+                    </div>
+                    <div class="text-area">
+                        <input class="input-msg" name="input" placeholder=" Scrivi un messaggio" autocomplete="off" autofocus></input>
+                    </div>
+                    <div class="col-small">
+                        <div class="right-chat-footer-btn">
+                            <i class="fa-solid fa-microphone"></i>
+                        </div>
+                    </div>
                 </div>
             </div>
             <!-- ///RIGHT-CHAT -->
