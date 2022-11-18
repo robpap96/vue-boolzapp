@@ -173,6 +173,8 @@ _____________________*/
 .contacts-chat .contact-card {
     display: flex;
     padding: 10px 0;
+    overflow-y: auto;
+
 }
 .contacts-chat .profile-name {
     display: flex;
@@ -191,11 +193,64 @@ _____________________*/
     font-size: 13px;
     font-weight: 100;
 }
+.active {
+    background-color: gainsboro;
+}
 /*____________________
 
       RIGHT-CHAT
 _____________________*/
 .right-chat {
     width: 60%;
-    
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-image: url("../img/mine.jpg");
 }
+.right-chat-header{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-shrink: 0;
+    background-color:  #fafafa;
+}
+.right-chat .your-profile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 5px;
+}
+.right-chat span{
+    color: #c1b9c0;
+    font-size: 13px;
+    font-weight: 100;
+}
+.right-chat-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.messages{
+    padding: 20px 80px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%; 
+}
+
+.message-container {
+    width: 100%;
+    flex-grow: 1;
+
+}
+.message{
+    width: 40%;
+    background-color: white;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    border-radius: 15px;
+}
+.message.sent {
+    background-color: #d5f9ba;
+    margin-left: auto;
+}    

@@ -58,16 +58,16 @@
                 <!-- ///CHAT-SEARCH -->
                 <!-- YOUR-CONTACTS -->
                 <div class="contacts-chat">
-                    <div class="contact-card" v-for="contact in contacts">
+                    <div class="contact-card" :class="{active : index === activeContact}" v-for="(contact,index) in contacts">
                         <div class="profile-pic" >
-                            <img :src="contact.avatar" alt="">
+                            <img :src="`img/avatar${contact.avatar}.jpg`" alt="">
                         </div>
                         <div class="profile-name">
                             {{contact.name}}
-                           <span>{{contact.messages[0].message}}</span> 
+                           <span>{{contact.messages[contact.messages.length-1].message}}</span> 
                         </div>
                         <div class="last-message-date">
-                            {{contact.messages[0].date}}
+                            {{contact.messages[contact.messages.length-1].date}}
                         </div>
                     </div>
                 </div>
@@ -75,7 +75,32 @@
             </div>
             <!-- ///LEFT-CHAT -->
             <!-- RIGHT-CHAT -->
-            <div class="right-chat"></div>
+            <div class="right-chat">
+                <div class="right-chat-header">
+                    <div class="your-profile">
+                        <div class="profile-pic">
+                            <img :src="`img/avatar${contacts[activeContact].avatar}.jpg`" alt="">
+                        </div>
+                        <div class="profile-name">
+                            Michele <br> <span>Ultimo accesso oggi alle 12:00</span>
+                        </div>
+                    </div>
+                    <div class="right-chat-actions">
+                        <div class="circle-notch-btn"><i class="fa-solid fa-magnifying-glass"></i></div>
+                        <div class="message-btn"><i class="fa-solid fa-paperclip"></i></div>
+                        <div class="vertical-eclipsis"><i class="fa-solid fa-ellipsis-vertical"></i></i></div>
+                    </div>
+                </div>
+                <div class="messages" v-if="">
+                    <div class="message-container" v-for="message in contacts[activeContact].messages" >
+                        <div class="message" :class="message.status">    
+                            {{message.message}}
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
             <!-- ///RIGHT-CHAT -->
 
         </div>
