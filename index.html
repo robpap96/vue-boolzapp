@@ -52,14 +52,14 @@
                 <div class="chat-search">
                     <form>
                         <button type="submit">Search</button>
-                        <input type="search" placeholder="Cerca o inizia una nuova chat">
+                        <input type="search" v-model="search" placeholder="Cerca o inizia una nuova chat" @keyup="changeVisible(contacts)" @keydown.delete='changeVisible(contacts)'>
                     </form>
                 </div>
                 <!-- ///CHAT-SEARCH -->
                 <!-- YOUR-CONTACTS -->
                 <div class="contacts-container">
                     <div class="contacts-chat">
-                        <div class="contact-card" :class="{active : index === activeContact}" v-for="(contact,index) in contacts">
+                        <div v-show="contact.visible" class="contact-card" :class="{active : index === activeContact}" v-for="(contact,index) in contacts" @click="changeActive(index)">
                             <div class="profile-pic" >
                                 <img :src="`img/avatar${contact.avatar}.jpg`" alt="">
                             </div>
@@ -95,14 +95,11 @@
                 </div>
                 <div class="chat-container">
                     <div class="messages">
-                        <div class="message-container" v-for="(contact,index) in contacts[activeContact].messages" >
+                        <div class="message-container" v-for="(contact,index) in contacts[activeContact].messages">
                             <div class="message" :class="contact.status">    
                                 {{contact.message}}
                                 <div class="message-data">{{contact.date}}</div>
                             </div>
-                            <!-- <div v-if="index >= 2 && contact.visible" :class="{message, sent : addMessage}"  >
-                                {{currentMessage}}
-                            </div> -->
                         </div>
                     </div>
                 </div>

@@ -7,11 +7,12 @@ createApp({
         return {
             currentMessage: '',
             activeContact: 0,
+            search: '',
             contacts: [
                 {
                     name: 'Michele',
                     avatar: '_1',
-                    visible: false,
+                    visible: true,
                     messages: [
                         {
                             date: '10/01/2020 15:30:55',
@@ -33,7 +34,7 @@ createApp({
                 {
                     name: 'Fabio',
                     avatar: '_2',
-                    visible: false,
+                    visible: true,
                     messages: [
                         {
                             date: '20/03/2020 16:30:00',
@@ -55,7 +56,7 @@ createApp({
                 {
                     name: 'Samuele',
                     avatar: '_3',
-                    visible: false,
+                    visible: true,
                     messages: [
                         {
                             date: '28/03/2020 10:10:40',
@@ -77,7 +78,7 @@ createApp({
                 {
                     name: 'Alessandro B.',
                     avatar: '_4',
-                    visible: false,
+                    visible: true,
                     messages: [
                         {
                             date: '10/01/2020 15:30:55',
@@ -94,7 +95,7 @@ createApp({
                 {
                     name: 'Alessandro L.',
                     avatar: '_5',
-                    visible: false,
+                    visible: true,
                     messages: [
                         {
                             date: '10/01/2020 15:30:55',
@@ -111,7 +112,7 @@ createApp({
                 {
                     name: 'Claudia',
                     avatar: '_6',
-                    visible: false,
+                    visible: true,
                     messages: [
                         {
                             date: '10/01/2020 15:30:55',
@@ -133,7 +134,7 @@ createApp({
                 {
                     name: 'Federico',
                     avatar: '_7',
-                    visible: false,
+                    visible: true,
                     messages: [
                         {
                             date: '10/01/2020 15:30:55',
@@ -150,7 +151,7 @@ createApp({
                 {
                     name: 'Davide',
                     avatar: '_8',
-                    visible: false,
+                    visible: true,
                     messages: [
                         {
                             date: '10/01/2020 15:30:00',
@@ -179,7 +180,7 @@ createApp({
         },
         addMessage(contacts){
             let today = new Date();
-            let time = today.getHours() + ":" + today.getMinutes();
+            let time = today.getHours() + ":" + (today.getMinutes()<10?'0':'') + today.getMinutes();
             const currentMessageMy = {
                 date: time,
                 message: this.currentMessage,
@@ -197,7 +198,15 @@ createApp({
 
             }, 1000);
         },
-
+        changeVisible(contacts) {
+            for(let i=0; i<contacts.length; i++){
+                if(!(contacts[i].name.toLowerCase().includes(this.search))){
+                    contacts[i].visible = false;
+                }
+            }
+            
+            // console.log(contacts[0].name)
+        },
 
     },
 
