@@ -261,6 +261,8 @@ _____________________*/
 }
 .message{
     position: relative;
+    display: flex;
+    justify-content: space-between;
     width: 40%;
     background-color: white;
     padding: 10px 20px;
@@ -318,4 +320,20 @@ _____________________*/
     padding-left: 10px;
     outline: none;
     min-width: 50px;
-  }
+}
+/*____________________
+
+      DROPDOWN-MSG
+_____________________*/
+.message.received .dropdown-menu i{
+    color: #fafafa;
+}
+.message.received .dropdown-menu i:hover{
+    color: rgb(199, 189, 189);
+}
+.message.sent .dropdown-menu i{
+    color: #d5f9ba;
+}
+.message.sent .dropdown-menu i:hover{
+    color: rgb(199, 189, 189);
+}
