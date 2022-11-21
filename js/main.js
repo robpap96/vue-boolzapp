@@ -200,6 +200,9 @@ createApp({
         },
         changeVisible(contacts) {
             for(let i=0; i<contacts.length; i++){
+                if(!contacts[i].visible){
+                    contacts[i].visible = true;
+                }
                 if(!(contacts[i].name.toLowerCase().includes(this.search))){
                     contacts[i].visible = false;
                 }
