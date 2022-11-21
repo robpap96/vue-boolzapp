@@ -325,15 +325,3 @@ _____________________*/
 
       DROPDOWN-MSG
 _____________________*/
-.message.received .dropdown-menu i{
-    color: #fafafa;
-}
-.message.received .dropdown-menu i:hover{
-    color: rgb(199, 189, 189);
-}
-.message.sent .dropdown-menu i{
-    color: #d5f9ba;
-}
-.message.sent .dropdown-menu i:hover{
-    color: rgb(199, 189, 189);
-}

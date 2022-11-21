@@ -99,18 +99,15 @@
                 </div>
                 <div class="chat-container">
                     <div class="messages">
-                        <div class="message-container" v-for="(contact,index) in contacts[activeContact].messages">
-                            <div class="message" :class="contact.status">    
-                                {{contact.message}}
-                                <div class="message-data">{{contact.date}}</div>
+                        <div class="message-container" v-for="(message,index) in contacts[activeContact].messages">
+                            <div class="message" :class="message.status">    
+                                {{message.message}}
+                                <div class="message-data">{{message.date}}</div>
                                 <div class="dropdown">
-                                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                      Dropdown button
-                                    </button>
+                                    <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"></button>
                                     <ul class="dropdown-menu">
-                                      <li><a class="dropdown-item" href="#">Action</a></li>
-                                      <li><a class="dropdown-item" href="#">Another action</a></li>
-                                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                        <li><a class="dropdown-item" href="#">Message Info</a></li>
+                                        <li><a class="dropdown-item" href="#" @click="deleteMessage(message,activeContact,index)">Delete Message</a></li>
                                     </ul>
                                   </div>
                             </div>

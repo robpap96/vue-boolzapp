@@ -210,7 +210,9 @@ createApp({
             
             // console.log(contacts[0].name)
         },
-
+        deleteMessage(message,activeContactIndex,mexIndex){
+           console.log(this.contacts[activeContactIndex].messages.splice(message[mexIndex+1], 1));
+        },
 
     },
 
